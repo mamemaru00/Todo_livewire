@@ -20,4 +20,12 @@ class TodoList extends Component
         return view('livewire.todo-list')
             ->extends("layouts.app");
     }
+
+    public function delete(int $id)
+    {
+        $index = $this->todos->search(fn (Todo $todo) => $todo->id === $id);
+        $this->todos[$index]->delete();
+
+        $this->todos = $this->todos->filter(fn (Todo $todo) => $todo->id !== $id);
+    }
 }
