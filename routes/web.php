@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\TodoCreate;
-
+use App\Http\Livewire\TodoList;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get("/todos/create", TodoCreate::class)->name("todos.create");
+Route::get("/todos", TodoList::class)->name("todos");
