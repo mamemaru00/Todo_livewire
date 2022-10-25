@@ -2,7 +2,8 @@
     <ul>
         @foreach($todos as $todo)
         <li wire:key="{{ $todo->id }}">
-            <a>{{ $todo->title }}</a>
+            <!-- 更新画面へのルーティングを追加 -->
+            <a href="{{ route('todos.show', ['todo' => $todo->id]) }}">{{ $todo->title }}</a>
         </li>
         @endforeach
     </ul>
